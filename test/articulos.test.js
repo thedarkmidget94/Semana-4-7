@@ -22,7 +22,7 @@ describe('Articulos Endpoints', () => {
     it('listas de articulos', async() => {
         const res = await request(app)
             .get('/api/articulo/list')
-        expect(res.statusCode).toEqual(404)
+        expect(res.statusCode).toEqual(200)
 
     })
 
