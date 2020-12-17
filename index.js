@@ -23,12 +23,12 @@ app.use(bodyParser.urlencoded({extended:true}));
 //primera ruta
 app.use('/api', apiRouter);
 
-app.set('PORT', 3000);
-
 app.get('/', function(req, res) {
     console.log("Estructura base del proyecto final.");
     res.send("Estructura base del proyecto final.");
 });
+
+app.set('port', process.env.PORT || 3000);
 
 app.listen(app.get('PORT'), () => {
     console.log(`Running on http://localhost:${app.get('PORT')}`)
