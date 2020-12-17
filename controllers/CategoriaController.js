@@ -3,13 +3,7 @@ const models = require('../models');
 exports.list = async(req, res, next) => {
     try{
         const categoria = await models.Categoria.findAll();
-        if(categoria){
-            res.status(200).json(categoria);
-        }else{
-            res.status(404).send({
-                message: 'La categoria no existe en el sistema.'
-            })
-        }
+        res.status(200).json(categoria);
     }catch(error){
         res.status(500).send({
             message: "¡Error!"
